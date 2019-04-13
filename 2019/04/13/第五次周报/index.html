@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="1.本周学习方向：1.链表头插法复习。 2.单片机的进一步学习：中断、定时器、时钟、各种波形输出、l298n驱动。 2.学习参考1.图书馆藏书：单片机应用实训。2.慕课网。3.单片机开发板教程。 3.总结单片机的学习不光是程序写好就能完事的，硬件的连线也是非常重要的。在写单片机中断程序时类容不宜过多，以免降低实时性。单片机的定时器可以根据要求更加精确的进行定时操作。 4.LeetCode反转链表反">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第五次周报">
+<meta property="og:url" content="https:///SweatLin.github.io/2019/04/13/第五次周报/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.本周学习方向：1.链表头插法复习。 2.单片机的进一步学习：中断、定时器、时钟、各种波形输出、l298n驱动。 2.学习参考1.图书馆藏书：单片机应用实训。2.慕课网。3.单片机开发板教程。 3.总结单片机的学习不光是程序写好就能完事的，硬件的连线也是非常重要的。在写单片机中断程序时类容不宜过多，以免降低实时性。单片机的定时器可以根据要求更加精确的进行定时操作。 4.LeetCode反转链表反">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T03:50:28.847Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第五次周报">
+<meta name="twitter:description" content="1.本周学习方向：1.链表头插法复习。 2.单片机的进一步学习：中断、定时器、时钟、各种波形输出、l298n驱动。 2.学习参考1.图书馆藏书：单片机应用实训。2.慕课网。3.单片机开发板教程。 3.总结单片机的学习不光是程序写好就能完事的，硬件的连线也是非常重要的。在写单片机中断程序时类容不宜过多，以免降低实时性。单片机的定时器可以根据要求更加精确的进行定时操作。 4.LeetCode反转链表反">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>第五次周报</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">Hexo</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/03/23/周报/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https:///SweatLin.github.io/2019/04/13/第五次周报/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&text=第五次周报"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&is_video=false&description=第五次周报"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=第五次周报&body=Check out this article: https:///SweatLin.github.io/2019/04/13/第五次周报/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&name=第五次周报&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-本周学习方向："><span class="toc-number">1.</span> <span class="toc-text">1.本周学习方向：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-学习参考"><span class="toc-number">2.</span> <span class="toc-text">2.学习参考</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-总结"><span class="toc-number">3.</span> <span class="toc-text">3.总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-LeetCode"><span class="toc-number">4.</span> <span class="toc-text">4.LeetCode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-下周进度"><span class="toc-number">5.</span> <span class="toc-text">5.下周进度</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        第五次周报
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-04-13T02:23:21.000Z" itemprop="datePublished">2019-04-13</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="1-本周学习方向："><a href="#1-本周学习方向：" class="headerlink" title="1.本周学习方向："></a>1.本周学习方向：</h1><p>1.链表头插法复习。</p>
+<p>2.单片机的进一步学习：中断、定时器、时钟、各种波形输出、l298n驱动。</p>
+<h1 id="2-学习参考"><a href="#2-学习参考" class="headerlink" title="2.学习参考"></a>2.学习参考</h1><p>1.图书馆藏书：单片机应用实训。<br>2.慕课网。<br>3.单片机开发板教程。</p>
+<h1 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h1><p>单片机的学习不光是程序写好就能完事的，硬件的连线也是非常重要的。<br>在写单片机中断程序时类容不宜过多，以免降低实时性。单片机的定时器<br>可以根据要求更加精确的进行定时操作。</p>
+<h1 id="4-LeetCode"><a href="#4-LeetCode" class="headerlink" title="4.LeetCode"></a>4.LeetCode</h1><p>反转链表<br>反转一个单链表。</p>
+<p>示例:</p>
+<p>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL<br>输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL<br>进阶:<br>你可以迭代或递归地反转链表。你能否用两种方法解决这道题？</p>
+<p><a href="https://paste.ubuntu.com/p/nrZsCbg475/" target="_blank" rel="noopener"><span style="color:orange">点击查看代码<font></font></span></a></p>
+<h1 id="5-下周进度"><a href="#5-下周进度" class="headerlink" title="5.下周进度"></a>5.下周进度</h1><p>1.单片机的进一步学习：舵机控制、AD、DA等。</p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-本周学习方向："><span class="toc-number">1.</span> <span class="toc-text">1.本周学习方向：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-学习参考"><span class="toc-number">2.</span> <span class="toc-text">2.学习参考</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-总结"><span class="toc-number">3.</span> <span class="toc-text">3.总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-LeetCode"><span class="toc-number">4.</span> <span class="toc-text">4.LeetCode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-下周进度"><span class="toc-number">5.</span> <span class="toc-text">5.下周进度</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https:///SweatLin.github.io/2019/04/13/第五次周报/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&text=第五次周报"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&is_video=false&description=第五次周报"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=第五次周报&body=Check out this article: https:///SweatLin.github.io/2019/04/13/第五次周报/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&title=第五次周报"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https:///SweatLin.github.io/2019/04/13/第五次周报/&name=第五次周报&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 SweatLin
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
