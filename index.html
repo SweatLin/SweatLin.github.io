@@ -1,209 +1,217 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SweatLin'blog - Hello I'm SweatLin</title><meta name="author" content="SweatLin"><meta name="copyright" content="SweatLin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="欢迎访问SweatLin的博客！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SweatLin&#39;blog">
+<meta property="og:url" content="http://sweatlin.github.io/index.html">
+<meta property="og:site_name" content="SweatLin&#39;blog">
+<meta property="og:description" content="欢迎访问SweatLin的博客！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://sweatlin.github.io/image/settings/%E5%A4%B4%E5%83%8F.jpg">
+<meta property="article:author" content="SweatLin">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sweatlin.github.io/image/settings/%E5%A4%B4%E5%83%8F.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://sweatlin.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SweatLin\'blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-09-28 15:49:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/25/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-09-25T06:24:05.453Z" itemprop="datePublished">2023-09-25</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/25/hello-world/">Hello World</a>
-    </h1>
-  
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./image/settings/%E5%A4%B4%E5%83%8F.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/./image/settings/%E9%BB%84%E6%98%8F.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="SweatLin'blog"><span class="site-name">SweatLin'blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">SweatLin'blog</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/SweatLin" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1357495679@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/09/27/LinuxUSB%E5%9B%BA%E5%AE%9A/" title="LinuxUSB固定"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LinuxUSB固定"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/27/LinuxUSB%E5%9B%BA%E5%AE%9A/" title="LinuxUSB固定">LinuxUSB固定</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-27T06:57:39.000Z" title="发表于 2023-09-27 14:57:39">2023-09-27</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-28T01:12:43.280Z" title="更新于 2023-09-28 09:12:43">2023-09-28</time></span></div><div class="content">LinuxUSB固定&emsp;&emsp;Linux环境下经常会遇到USB设备节点不固定的问题。通常设备节点名为ttyUSBx（x代表任意数字），Linux内核会根据设备插入的先后顺序进行编号的分配，即第一个插入的设备编号为ttyUSB0、第二个插入的设备编号为ttyUSB1，依次类推。&emsp;&emsp;然而，当我们重启Linux系统或者重新插拔USB设备后，Linux内核会重新分配每个设备的编号，原来的设备编号会发生改变。我们无法保证设备A的设备节点就是ttyUSB0，设备B的设备节点就是ttyUSB1，在设备文件&#x2F;dev目录下没有提供固定显示ttyUSB的方法。因此，如果仅仅以设备节点ttyUSBx来区分具体是哪个设备，很容易造成程序的混乱。&emsp;&emsp;Linux主机或者服务器的每个USB端口都有一个唯一的端口号，相当于每个员工的工位。简单来说，就是固定设备插入到指定的USB端口（如：设备A插入到端口1），然后根据端口号找到挂载在这个端口号上面的USB设备节点。
+&emsp;&emsp;按照以上逻辑，我们还可以根据端口号来自定义串口设备节点的名称，如自 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/09/27/Linux%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1/" title="Linux自定义服务"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux自定义服务"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/27/Linux%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1/" title="Linux自定义服务">Linux自定义服务</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-27T01:03:52.892Z" title="发表于 2023-09-27 09:03:52">2023-09-27</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-27T06:11:57.674Z" title="更新于 2023-09-27 14:11:57">2023-09-27</time></span></div><div class="content">Linux自定义服务####1.创建服务配置文件
+&emsp;&emsp;创建一个Systemd服务单元配置文件，通常保存在&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;目录中，文件名以.service结尾，例如myservice.service。示例文件内容如下：
+[Unit]
+Description=My Custom Service
+After=network.target
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+[Service]
+ExecStart=/usr/local/bin/myservice.sh start
+ExecStop=/usr/local/bin/myservice.sh stop
+ExecReload=/usr/local/bin/myservice.sh restart
+Restart=always
+User=your_username
+Group=your_groupname
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+[Install]
+WantedBy=multi-user.target
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+[Unit] 部分：Description：用于提供关于服务的简短描述。After：指定服务应该在哪些其他 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/09/26/Linux%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95ssdm/" title="Linux开机自动登录ssdm"><img class="post-bg" src="/./image/settings/top.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux开机自动登录ssdm"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/26/Linux%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95ssdm/" title="Linux开机自动登录ssdm">Linux开机自动登录ssdm</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-26T07:31:26.280Z" title="发表于 2023-09-26 15:31:26">2023-09-26</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-28T05:31:22.485Z" title="更新于 2023-09-28 13:31:22">2023-09-28</time></span></div><div class="content">Linux开机自动登录ssdm 1.打开终端窗口
+ 2.使用超级用户权限登录（或者使用sudo命令）以编辑SDDM的配置文件。配置文件通常位于&#x2F;etc&#x2F;sddm.conf或&#x2F;etc&#x2F;sddm.conf.d&#x2F;目录中，具体文件名可能因Linux发行版而异。例如，在Ubuntu上，可以使用以下命令编辑SDDM的配置文件：
+1sudo vim /etc/sddm.conf
+如果没有&#x2F;etc&#x2F;sddm.conf文件，您可以创建一个新文件并将以下内容添加到其中：
+1234[Autologin]User=your_usernameSession=your_desktop_sessionRelogin=true
+将”your_username”替换为要自动登录的用户名，将”your_desktop_session”替换为您想要在登录后启动的桌面会话（例如，”plasma”或”gnome”）。”Relogin”表示用户注销过后会不会自动登录到相同账户。
+3.保存文件并退出编辑器。
+4.如果不知道自己的Session可以使用如下命令查询 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/09/26/Linux%E6%97%A5%E5%BF%97%E9%87%8D%E5%AE%9A%E5%90%91/" title="Linux日志重定向"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux日志重定向"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/26/Linux%E6%97%A5%E5%BF%97%E9%87%8D%E5%AE%9A%E5%90%91/" title="Linux日志重定向">Linux日志重定向</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-26T05:36:43.245Z" title="发表于 2023-09-26 13:36:43">2023-09-26</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-28T05:32:28.472Z" title="更新于 2023-09-28 13:32:28">2023-09-28</time></span></div><div class="content">Linux日志重定向&emsp;&emsp;针对部分强打屏日志重定向至文件中在Linux中，可以使用重定向符号将日志输出重定向到文件中。具体操作如下：
+1.输入命令，将日志输出重定向到指定文件中：1./test &gt; test.log 2&gt;&amp;1 
+&emsp;&emsp;这个命令 .&#x2F;test &gt; test.log 2&gt;&amp;1 是一个典型的 Linux 命令，用于执行名为 “test” 的可执行文件，并将其标准输出（stdout）和标准错误（stderr）都重定向到名为 “test.log” 的文件。
+.&#x2F;test: 这部分运行名为 “test” 的可执行文件。
+&gt;: 这个符号表示将前一个命令的标准输出（stdout）重定向到后面指定的文件。
+test.log: 这是要将标准输出写入的文件，如果不存在则会创建，如果已经存在则会覆盖文件内容。
+2&gt;&amp;1: 这部分将标准错误（stderr）重定向到标准输出（stdout），使得标准错误的输出也会被写入到 “test.log” 文件中。
+&emsp;&emsp;总结起 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/09/26/Linux%E7%81%AB%E7%8B%90%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0/" title="Ubuntu 22.04 火狐浏览器自动刷新"><img class="post-bg" src="/./image/settings/top.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu 22.04 火狐浏览器自动刷新"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/26/Linux%E7%81%AB%E7%8B%90%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0/" title="Ubuntu 22.04 火狐浏览器自动刷新">Ubuntu 22.04 火狐浏览器自动刷新</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-26T01:26:47.811Z" title="发表于 2023-09-26 09:26:47">2023-09-26</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-28T03:57:28.817Z" title="更新于 2023-09-28 11:57:28">2023-09-28</time></span></div><div class="content">Ubuntu 22.04 火狐浏览器自动刷新1.安装xdotool（如果未安装）
+1sudo apt-get install xdotool
+2.创建一个 Bash 脚本来模拟刷新操作。例如，创建一个名为 refresh.sh 的文件，将以下内容复制到文件中：
+12345#!/bin/bashwhile true; do    xdotool key F5  # 模拟按下 F5 键刷新页面    sleep 30        # 刷新间隔（秒）done
+这个脚本将每隔 30 秒模拟按下 F5 键来刷新页面。
+3.保存并关闭文件。然后，为脚本添加执行权限：
+1chmod +x refresh.sh
+4.运行脚本：
+1./refresh.sh
+这将启动自动刷新，每隔 30 秒刷新一次火狐浏览器中的当前标签页。
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/09/25/hello-world/" title="Hello World"><img class="post-bg" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/09/25/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-25T06:24:05.453Z" title="发表于 2023-09-25 14:24:05">2023-09-25</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-28T03:52:53.167Z" title="更新于 2023-09-28 11:52:53">2023-09-28</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+More info: Writing
+Run server1$ hexo server
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+More info: Server
+Generate static files1$ hexo generate
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/25/hello-world/" data-id="clmyiadu7000060vm3dgzclhg" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+More info: Generating
+Deploy to remote sites1$ hexo deploy
 
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/09/25/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./image/settings/%E5%A4%B4%E5%83%8F.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">SweatLin</div><div class="author-info__description">欢迎访问SweatLin的博客！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SweatLin" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1357495679@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/27/LinuxUSB%E5%9B%BA%E5%AE%9A/" title="LinuxUSB固定"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LinuxUSB固定"/></a><div class="content"><a class="title" href="/2023/09/27/LinuxUSB%E5%9B%BA%E5%AE%9A/" title="LinuxUSB固定">LinuxUSB固定</a><time datetime="2023-09-27T06:57:39.000Z" title="发表于 2023-09-27 14:57:39">2023-09-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/27/Linux%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1/" title="Linux自定义服务"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux自定义服务"/></a><div class="content"><a class="title" href="/2023/09/27/Linux%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1/" title="Linux自定义服务">Linux自定义服务</a><time datetime="2023-09-27T01:03:52.892Z" title="发表于 2023-09-27 09:03:52">2023-09-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/26/Linux%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95ssdm/" title="Linux开机自动登录ssdm"><img src="/./image/settings/top.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux开机自动登录ssdm"/></a><div class="content"><a class="title" href="/2023/09/26/Linux%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95ssdm/" title="Linux开机自动登录ssdm">Linux开机自动登录ssdm</a><time datetime="2023-09-26T07:31:26.280Z" title="发表于 2023-09-26 15:31:26">2023-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/26/Linux%E6%97%A5%E5%BF%97%E9%87%8D%E5%AE%9A%E5%90%91/" title="Linux日志重定向"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux日志重定向"/></a><div class="content"><a class="title" href="/2023/09/26/Linux%E6%97%A5%E5%BF%97%E9%87%8D%E5%AE%9A%E5%90%91/" title="Linux日志重定向">Linux日志重定向</a><time datetime="2023-09-26T05:36:43.245Z" title="发表于 2023-09-26 13:36:43">2023-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/26/Linux%E7%81%AB%E7%8B%90%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0/" title="Ubuntu 22.04 火狐浏览器自动刷新"><img src="/./image/settings/top.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu 22.04 火狐浏览器自动刷新"/></a><div class="content"><a class="title" href="/2023/09/26/Linux%E7%81%AB%E7%8B%90%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0/" title="Ubuntu 22.04 火狐浏览器自动刷新">Ubuntu 22.04 火狐浏览器自动刷新</a><time datetime="2023-09-26T01:26:47.811Z" title="发表于 2023-09-26 09:26:47">2023-09-26</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">6</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-09-28T07:49:50.763Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By SweatLin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
