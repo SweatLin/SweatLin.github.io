@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Docker使用基础 | SweatLin'blog</title><meta name="author" content="SweatLin"><meta name="copyright" content="SweatLin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Docker使用基础一、镜像操作1.镜像搜索1docker search name  2.镜像拉取1docker pull name:版本号  若版本号不填则默认下载最新的版本 3.查看本地镜像1docker images  4.删除镜像1docker rmi 镜像ID  二、容器操作1.运行容器前端运行新容器1docker run 镜像名称  后台运行新容器，并映射端口1docker run -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker使用基础">
+<meta property="og:url" content="http://sweatlin.github.io/2023/11/12/Docker%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="SweatLin&#39;blog">
+<meta property="og:description" content="Docker使用基础一、镜像操作1.镜像搜索1docker search name  2.镜像拉取1docker pull name:版本号  若版本号不填则默认下载最新的版本 3.查看本地镜像1docker images  4.删除镜像1docker rmi 镜像ID  二、容器操作1.运行容器前端运行新容器1docker run 镜像名称  后台运行新容器，并映射端口1docker run -">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://sweatlin.github.io/image/settings/top.jpg">
+<meta property="article:published_time" content="2023-11-12T04:28:05.000Z">
+<meta property="article:modified_time" content="2023-11-12T08:09:25.259Z">
+<meta property="article:author" content="SweatLin">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sweatlin.github.io/image/settings/top.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://sweatlin.github.io/2023/11/12/Docker%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Docker使用基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-12 16:09:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./image/settings/%E5%A4%B4%E5%83%8F.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./image/settings/top.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="SweatLin'blog"><span class="site-name">SweatLin'blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Docker使用基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-12T04:28:05.000Z" title="发表于 2023-11-12 12:28:05">2023-11-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-12T08:09:25.259Z" title="更新于 2023-11-12 16:09:25">2023-11-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Docker使用基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Docker使用基础"><a href="#Docker使用基础" class="headerlink" title="Docker使用基础"></a>Docker使用基础</h1><h2 id="一、镜像操作"><a href="#一、镜像操作" class="headerlink" title="一、镜像操作"></a>一、镜像操作</h2><h3 id="1-镜像搜索"><a href="#1-镜像搜索" class="headerlink" title="1.镜像搜索"></a>1.镜像搜索</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search name</span><br></pre></td></tr></table></figure>
+<p><img src="/../image/Docker%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/1.png"></p>
+<h3 id="2-镜像拉取"><a href="#2-镜像拉取" class="headerlink" title="2.镜像拉取"></a>2.镜像拉取</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull name:版本号</span><br></pre></td></tr></table></figure>
+
+<p>若版本号不填则默认下载最新的版本</p>
+<h3 id="3-查看本地镜像"><a href="#3-查看本地镜像" class="headerlink" title="3.查看本地镜像"></a>3.查看本地镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-删除镜像"><a href="#4-删除镜像" class="headerlink" title="4.删除镜像"></a>4.删除镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi 镜像ID</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、容器操作"><a href="#二、容器操作" class="headerlink" title="二、容器操作"></a>二、容器操作</h2><h3 id="1-运行容器"><a href="#1-运行容器" class="headerlink" title="1.运行容器"></a>1.运行容器</h3><h4 id="前端运行新容器"><a href="#前端运行新容器" class="headerlink" title="前端运行新容器"></a>前端运行新容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run 镜像名称</span><br></pre></td></tr></table></figure>
+
+<h4 id="后台运行新容器，并映射端口"><a href="#后台运行新容器，并映射端口" class="headerlink" title="后台运行新容器，并映射端口"></a>后台运行新容器，并映射端口</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:80 镜像名称</span><br></pre></td></tr></table></figure>
+<p>“-d”:后台运行<br>“-p”:端口映射  主机端口:容器端口</p>
+<p>如果 “-P”,且不指定端口映射，如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -P 镜像名称</span><br></pre></td></tr></table></figure>
+
+<p>则暴露容器中所有端口，并且在主机中使用随机端口去映射到这些暴露的端口中。</p>
+<h4 id="启动已经存在的容器"><a href="#启动已经存在的容器" class="headerlink" title="启动已经存在的容器"></a>启动已经存在的容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器ID</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-查看容器"><a href="#2-查看容器" class="headerlink" title="2.查看容器"></a>2.查看容器</h3><p>正在运行中的容器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<p>所有容器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-删除容器"><a href="#3-删除容器" class="headerlink" title="3.删除容器"></a>3.删除容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> 容器ID</span><br></pre></td></tr></table></figure>
+
+<p>容器ID只要能唯一定位就可以执行，不能直接删除运行中的容器。</p>
+<p>如果一定要删除可以使用强制删除：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> -f 容器ID</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-停止容器"><a href="#4-停止容器" class="headerlink" title="4.停止容器"></a>4.停止容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器ID</span><br></pre></td></tr></table></figure>
+<h3 id="5-指定容器名字"><a href="#5-指定容器名字" class="headerlink" title="5.指定容器名字"></a>5.指定容器名字</h3><p>运行新容器的时候指定容器名称</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p  主机端口:容器端口 --name 指定名称  镜像名称</span><br></pre></td></tr></table></figure>
+
+<p>这样指定过后，就可以使用指定的容器名称对这个容器进行操作了，而不是采用容器ID。</p>
+<h3 id="6-退出删除容器"><a href="#6-退出删除容器" class="headerlink" title="6.退出删除容器"></a>6.退出删除容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --<span class="built_in">rm</span> 镜像名称</span><br></pre></td></tr></table></figure>
+<p>此方法只要容器退出就会自动删除容器，多用于测试，如果启动容器失败退出则会自动删除容器，可以避免自己每次都去手动删除。</p>
+<h3 id="7-容器重启策略"><a href="#7-容器重启策略" class="headerlink" title="7.容器重启策略"></a>7.容器重启策略</h3><p>指定容器关闭时的重启策略有三种：<br>no(默认):表示不重启。<br>on-failure:当失败时重启，还可以加上:3指定最多重启3此，如果3次都失败就不再重启了。<br>always:只要已关闭就自动重启。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#策略一</span></span><br><span class="line">docker run -d --name 指定名称 --restart no 镜像名称</span><br><span class="line"><span class="comment">#策略二</span></span><br><span class="line">docker run -d --name 指定名称 --restart on-failure:3 镜像名称</span><br><span class="line"><span class="comment">#策略三</span></span><br><span class="line">docker run -d --name 指定名称 --restart always 镜像名称</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-为容器设置环境变量"><a href="#8-为容器设置环境变量" class="headerlink" title="8.为容器设置环境变量"></a>8.为容器设置环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -e NAME_ENV=xxx -e NAME_ENV2=xxx 镜像名称</span><br><span class="line">docker run -d --<span class="built_in">env</span> NAME_ENV=xxx --<span class="built_in">env</span> NAME_ENV2=xxx 镜像名称</span><br></pre></td></tr></table></figure>
+
+<p>有一个-e就可以指定一个环境变量，多个-e就指定多个环境变量。</p>
+<p>可以使用以下命令查看：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器ID/指定名称</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-让容器执行一个终端命令"><a href="#9-让容器执行一个终端命令" class="headerlink" title="9.让容器执行一个终端命令"></a>9.让容器执行一个终端命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it 容器指定名称 要执行的命令</span><br></pre></td></tr></table></figure>
+
+<p>“-it” 以终端形式执行</p>
+<h3 id="10-限制容器资源"><a href="#10-限制容器资源" class="headerlink" title="10.限制容器资源"></a>10.限制容器资源</h3><p> 通过各个资源相关命令可以在容器启动时直接限制容器最多使用多少资源，如–cpus 指定可使用的cpu数量， –memory bytes 限制内存使用大小。</p>
+<p>如果有不清楚的可以使用 –help 来查看。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动一个内存限制为2G的容器</span></span><br><span class="line">docker run -d -m 2g 镜像名称 </span><br><span class="line">docker run -d --memory bytes 2g 镜像名称 </span><br><span class="line"></span><br><span class="line"><span class="comment">#启动一个内存限制为2G，cpu限制为1个的容器</span></span><br><span class="line">docker run -d -m 2g --cpus 1 镜像名称 </span><br></pre></td></tr></table></figure>
+
+<p>实时查看容器资源使用情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stats 容器ID/容器指定名称</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-查看容器日志"><a href="#11-查看容器日志" class="headerlink" title="11.查看容器日志"></a>11.查看容器日志</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs 容器ID/容器指定名称</span><br></pre></td></tr></table></figure>
+<p>此方法会输出容器启动到目前的所有日志，不能实时监控。</p>
+<p>如果要实时监听，执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f -n 20 容器ID/容器指定名称</span><br></pre></td></tr></table></figure>
+
+<p>“-f”:实时监听。<br>“-n”:显示最近的多少条日志数据。</p>
+<h3 id="12-进入容器内部"><a href="#12-进入容器内部" class="headerlink" title="12.进入容器内部"></a>12.进入容器内部</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it 容器ID/容器指定名称 /bin/bash</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://SweatLin.github.io">SweatLin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://sweatlin.github.io/2023/11/12/Docker%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/">http://sweatlin.github.io/2023/11/12/Docker%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://SweatLin.github.io" target="_blank">SweatLin'blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/Docker/">Docker</a></div><div class="post_share"><div class="social-share" data-image="/./image/settings/top.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/./image/settings/%E5%BE%AE%E4%BF%A1.png" target="_blank"><img class="post-qr-code-img" src="/./image/settings/%E5%BE%AE%E4%BF%A1.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/./image/settings/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg" target="_blank"><img class="post-qr-code-img" src="/./image/settings/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/11/12/Docker%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F/" title="Docker配置阿里云镜像加速"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Docker配置阿里云镜像加速</div></div></a></div><div class="next-post pull-right"><a href="/2023/11/11/Ubuntu-22-04-LTS-%E5%AE%89%E8%A3%85-Docker/" title="Ubuntu 22.04 LTS 安装 Docker"><img class="cover" src="/./image/settings/top.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Ubuntu 22.04 LTS 安装 Docker</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/11/11/Ubuntu-22-04-LTS-%E5%AE%89%E8%A3%85-Docker/" title="Ubuntu 22.04 LTS 安装 Docker"><img class="cover" src="/./image/settings/top.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-11</div><div class="title">Ubuntu 22.04 LTS 安装 Docker</div></div></a></div><div><a href="/2023/11/12/Docker%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F/" title="Docker配置阿里云镜像加速"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-12</div><div class="title">Docker配置阿里云镜像加速</div></div></a></div><div><a href="/2023/11/12/Docker%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/" title="Docker构建镜像"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-12</div><div class="title">Docker构建镜像</div></div></a></div><div><a href="/2023/09/26/Linux%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95ssdm/" title="Linux开机自动登录ssdm"><img class="cover" src="/./image/settings/top.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="title">Linux开机自动登录ssdm</div></div></a></div><div><a href="/2023/09/26/Linux%E6%97%A5%E5%BF%97%E9%87%8D%E5%AE%9A%E5%90%91/" title="Linux日志重定向"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="title">Linux日志重定向</div></div></a></div><div><a href="/2023/09/27/LinuxUSB%E5%9B%BA%E5%AE%9A/" title="LinuxUSB固定"><img class="cover" src="/./image/settings/top.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-27</div><div class="title">LinuxUSB固定</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./image/settings/%E5%A4%B4%E5%83%8F.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">SweatLin</div><div class="author-info__description">欢迎访问SweatLin的博客！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SweatLin" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1357495679@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">Docker使用基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%95%9C%E5%83%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">一、镜像操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%95%9C%E5%83%8F%E6%90%9C%E7%B4%A2"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.镜像搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%95%9C%E5%83%8F%E6%8B%89%E5%8F%96"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.镜像拉取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9F%A5%E7%9C%8B%E6%9C%AC%E5%9C%B0%E9%95%9C%E5%83%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.查看本地镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.删除镜像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%B9%E5%99%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">二、容器操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.运行容器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E8%BF%90%E8%A1%8C%E6%96%B0%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">前端运行新容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%E6%96%B0%E5%AE%B9%E5%99%A8%EF%BC%8C%E5%B9%B6%E6%98%A0%E5%B0%84%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">后台运行新容器，并映射端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">启动已经存在的容器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.查看容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.删除容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.停止容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%8C%87%E5%AE%9A%E5%AE%B9%E5%99%A8%E5%90%8D%E5%AD%97"><span class="toc-number">1.2.5.</span> <span class="toc-text">5.指定容器名字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E9%80%80%E5%87%BA%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="toc-number">1.2.6.</span> <span class="toc-text">6.退出删除容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%AE%B9%E5%99%A8%E9%87%8D%E5%90%AF%E7%AD%96%E7%95%A5"><span class="toc-number">1.2.7.</span> <span class="toc-text">7.容器重启策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E4%B8%BA%E5%AE%B9%E5%99%A8%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.8.</span> <span class="toc-text">8.为容器设置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E8%AE%A9%E5%AE%B9%E5%99%A8%E6%89%A7%E8%A1%8C%E4%B8%80%E4%B8%AA%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.9.</span> <span class="toc-text">9.让容器执行一个终端命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E9%99%90%E5%88%B6%E5%AE%B9%E5%99%A8%E8%B5%84%E6%BA%90"><span class="toc-number">1.2.10.</span> <span class="toc-text">10.限制容器资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97"><span class="toc-number">1.2.11.</span> <span class="toc-text">11.查看容器日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E8%BF%9B%E5%85%A5%E5%AE%B9%E5%99%A8%E5%86%85%E9%83%A8"><span class="toc-number">1.2.12.</span> <span class="toc-text">12.进入容器内部</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/11/12/Docker%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/" title="Docker构建镜像"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker构建镜像"/></a><div class="content"><a class="title" href="/2023/11/12/Docker%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F/" title="Docker构建镜像">Docker构建镜像</a><time datetime="2023-11-12T11:45:51.000Z" title="发表于 2023-11-12 19:45:51">2023-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/12/Docker%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F/" title="Docker配置阿里云镜像加速"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker配置阿里云镜像加速"/></a><div class="content"><a class="title" href="/2023/11/12/Docker%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F/" title="Docker配置阿里云镜像加速">Docker配置阿里云镜像加速</a><time datetime="2023-11-12T05:23:18.000Z" title="发表于 2023-11-12 13:23:18">2023-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/12/Docker%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/" title="Docker使用基础"><img src="/./image/settings/top.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker使用基础"/></a><div class="content"><a class="title" href="/2023/11/12/Docker%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80/" title="Docker使用基础">Docker使用基础</a><time datetime="2023-11-12T04:28:05.000Z" title="发表于 2023-11-12 12:28:05">2023-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/11/Ubuntu-22-04-LTS-%E5%AE%89%E8%A3%85-Docker/" title="Ubuntu 22.04 LTS 安装 Docker"><img src="/./image/settings/top.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu 22.04 LTS 安装 Docker"/></a><div class="content"><a class="title" href="/2023/11/11/Ubuntu-22-04-LTS-%E5%AE%89%E8%A3%85-Docker/" title="Ubuntu 22.04 LTS 安装 Docker">Ubuntu 22.04 LTS 安装 Docker</a><time datetime="2023-11-11T15:51:36.000Z" title="发表于 2023-11-11 23:51:36">2023-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/06/voc%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%ACyolo%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E9%9B%86/" title="voc格式数据集转yolo格式数据集"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="voc格式数据集转yolo格式数据集"/></a><div class="content"><a class="title" href="/2023/11/06/voc%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%ACyolo%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E9%9B%86/" title="voc格式数据集转yolo格式数据集">voc格式数据集转yolo格式数据集</a><time datetime="2023-11-06T08:21:40.000Z" title="发表于 2023-11-06 16:21:40">2023-11-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By SweatLin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
